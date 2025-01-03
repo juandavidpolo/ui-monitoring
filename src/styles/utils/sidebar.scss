@@ -1,0 +1,23 @@
+@use './colors.scss' as colors;
+@use './borders.scss' as borders;
+
+.custom--sidebar{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  &>.sidebar--item{
+    height: 2.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: borders.$no_border;
+    border-radius: 10px;
+    &>.sidebar--badge{
+      background-color: colors.$light;
+      color: colors.$dark;
+    }
+  }
+}

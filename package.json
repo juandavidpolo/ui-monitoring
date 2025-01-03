@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.5.0",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
@@ -10,9 +15,10 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "reactstrap": "^9.2.3",
     "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
@@ -38,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
   }
 }

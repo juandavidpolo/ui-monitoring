@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { onCLS, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'src/styles/index.sass';
+import 'src/styles/index.scss';
 
 import { store } from './redux/store';
 import App from 'src/App';

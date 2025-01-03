@@ -1,0 +1,116 @@
+import React from "react";
+
+import {
+  faCircleUser,
+  faBell,
+} from '@fortawesome/free-regular-svg-icons';
+import {} from '@fortawesome/free-brands-svg-icons';
+import {
+  faArrowDown,
+  faMagnifyingGlass,
+  faServer,
+  faDatabase,
+  faTriangleExclamation,
+  faCircleExclamation,
+  faCloud
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+export const userIcon = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon 
+      icon={faCircleUser} 
+      size={size} 
+      style={{color: color}} 
+      flip={flip} 
+      rotation={rotation}/>
+  )
+}
+
+export const notificationsCampaing = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon 
+      icon={faBell}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const navigationArrow = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon 
+      icon={faArrowDown}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const search = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faMagnifyingGlass}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const database = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faDatabase}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const server = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faServer}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const cloud = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faCloud}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const triangleExclamation = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faTriangleExclamation}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const circleExclamation = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faCircleExclamation}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}

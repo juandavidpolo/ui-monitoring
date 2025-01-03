@@ -1,0 +1,11 @@
+@use './colors.scss' as colors;
+
+$no_border: none;
+
+$solid_1px_ligth_border: 1px solid colors.$light;
+$solid_2px_ligth_border: 2px solid colors.$light;
+$solid_3px_ligth_border: 3px solid colors.$light;
+
+$solid_1px_dark_border: 1px solid colors.$dark;
+$solid_2px_dark_border: 2px solid colors.$dark;
+$solid_3px_dark_border: 3px solid colors.$dark;

@@ -1,11 +1,16 @@
 import React from "react";
 
+import Sidebar from "src/components/layout/sidebar";
+
 const Monitor = () => {
-    return(
-        <div>
-            Monitor view
-        </div>
-    )
+  return(
+    <>
+      <Sidebar/>
+      <div className="main--section configure--view">
+        Monitor View
+      </div>
+    </>
+  )
 }
 
 export default Monitor

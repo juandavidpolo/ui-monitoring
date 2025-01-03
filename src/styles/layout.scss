@@ -1,0 +1,83 @@
+@use './utils/colors.scss' as colors;
+
+.custom--layout {
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  &>.custom--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    &>.custom--navigation {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      border-bottom: 1px solid colors.$light;
+      &>.navigation--section {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 0 1rem;
+        &>.user{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+      &>:first-child {
+        min-height: 75px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &>:last-child {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        &>.client--selector,
+        .view--selector {
+          margin: 0px;
+          padding: 0px;
+        }
+      }
+    }
+    &>.custom--view{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      width: 100%;
+      &>.custom--sidebar{
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem;
+        border-right: 1px solid colors.$light;
+        flex: 0 0 auto;
+      }
+      &>.main--section{
+        flex: 1 0 auto;
+        padding: 1rem;
+        &>.row{
+          --bs-gutter-y: 0;
+          --bs-gutter-x: 0;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
