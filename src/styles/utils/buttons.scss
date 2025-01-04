@@ -1,5 +1,6 @@
-@use './colors.scss' as colors;
 @use './borders.scss' as borders;
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
 
 .custom--button {
   background: transparent;
@@ -9,7 +10,7 @@
 }
 
 .nav--button {
-  color: colors.$dark;
+  color: var(--bs-gray-900);
   border: none;
   height: 32px;
 }
@@ -19,13 +20,13 @@
 }
 
 .dark--button {
-  background-color: colors.$dark;
-  color: colors.$light;
+  background-color: var(--bs-gray-900);
+  color: var(--bs-gray-400);
   border-radius: 5px;
 }
 
 .ligth--button {
-  background-color: colors.$light;
-  color: colors.$dark;
+  background-color: var(--bs-gray-400);
+  color: var(--bs-gray-900);
   border-radius: 5px;
 }

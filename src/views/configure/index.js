@@ -5,64 +5,44 @@ import { useLocation } from 'react-router-dom';
 
 import Sidebar from "src/components/layout/sidebar";
 import ViewHeader from "src/components/viewHeader";
-import { DataCard, ListCard } from "src/components/cards";
-
-import {
-  database,
-  server,
-  cloud,
-  triangleExclamation,
-  circleExclamation
-} from "src/assets/svg";
+import {InterfaceConfigration} from "src/components/cards";
 
 const Configure = () => {
 
-  const [services, setServices] = useState([
-    {
-      name:"Web Server",
-      icon:server(),
-      status:"Running"
-    },
-    {
-      name:"Database",
-      icon:database(),
-      status:"Running"
-    },
-    {
-      name:"Cloud Storage",
-      icon:cloud(),
-      status:"Running"
-    }
-  ])
-
-  const [alerts, setAlerts] = useState([
-    {
-      name:"High CPU usage",
-      icon:triangleExclamation(),
-      status:"Warning"
-    },
-    {
-      name:"System Update",
-      icon:circleExclamation(),
-      status:"Info"
-    }
-  ])
-
   let title = useLocation().pathname.replace("/","");
   title = title.charAt(0).toUpperCase() + title.slice(1);
-  let subTitle = "Device IP: 192.168.0.1"
+  let subTitle = "Last updated: Just Now"
   const headerButtons = [
     {
-      label: "button",
+      label: "Export Data",
       action: () => {console.log("button 1 action")},
       design: "dark"
     },
     {
-      label: "button",
+      label: "Client Settings",
       action: () => {console.log("button 2 action")},
       design: "ligth"
     }
   ]
+
+  const [interfaces, setIntefaces] = useState([
+      {
+        id:"1",
+        name:"Web Server",
+        ipAddress:"192.168.0.1",
+        status:"Up",
+        mtu:"1500",
+        speed:"1000Mbps"
+      },
+      {
+        id:"2",
+        name:"Web Server 2",
+        ipAddress:"192.168.0.1",
+        status:"Up",
+        mtu:"1500",
+        speed:"1000Mbps"
+      }
+    ])
 
   return(
     <>
@@ -72,26 +52,10 @@ const Configure = () => {
           <ViewHeader title={title} subTitle={subTitle} buttons={headerButtons}/>
         </Row>
         <Row className="custom--row">
-          <DataCard
-            title="System health"
-            mainData="74%"
-            footer="12% increase from las week"/>
-          <DataCard
-            title="Active Users"
-            mainData="34%"
-            footer="32% increase from yesterday"/>
-          <DataCard
-            title="Server Load"
-            mainData="24%"
-            footer="22% increase from peak hours"/>
-        </Row>
-        <Row className="custom--row">
-          <ListCard 
-            title="Active Services"
-            items={services}/>
-          <ListCard
-            title="Recent Alerts"
-            items={alerts}/>
+          <InterfaceConfigration
+            title="Interface Configuration"
+            items={interfaces}
+          />
         </Row>
       </div>
     </>

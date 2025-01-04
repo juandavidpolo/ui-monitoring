@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-import SearchInput from "src/components/searchInput";
-
 import { Badge } from "reactstrap";
+
+import SearchInput from "src/components/searchInput";
 
 const Sidebar = () => {
 

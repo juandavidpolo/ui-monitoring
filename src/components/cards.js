@@ -2,13 +2,15 @@ import React from "react";
 
 import {Badge} from 'reactstrap';
 
+import { secondary } from "src/utils/getDefinedStyles";
+
 const DataCard = ({title, mainData, footer}) => {
 
   return(
     <div className="data--card">
       <div className="card--header">
         <div>
-          {title}
+          <h3>{title}</h3>
         </div>
         <div>
           74%
@@ -27,10 +29,10 @@ const DataCard = ({title, mainData, footer}) => {
 const ListCard = ({title, items}) => {
 
   return(
-    <div className="data--card">
+    <div className="list--card">
       <div className="card--header">
         <div>
-          {title}
+        <h3>{title}</h3>
         </div>
         <div>
           {}
@@ -42,7 +44,7 @@ const ListCard = ({title, items}) => {
             <div>{item.icon}</div>
             <div>{item.name}</div>
             <div>
-              <Badge color="dark">
+              <Badge color={secondary().key}>
               {item.status}
               </Badge>
             </div>
@@ -53,4 +55,58 @@ const ListCard = ({title, items}) => {
   )
 }
 
-export { DataCard, ListCard };
+const InterfaceConfigration = ({title, items}) => {
+  return(
+    <div className="interface--card">
+      <div className="card--header">
+        <div>
+        <h3>{title}</h3>
+        </div>
+        <div>
+          <button
+            type="button"
+            className="custom--button ligth--button">
+            Add Interface
+          </button>
+        </div>
+      </div>
+      <div className="interface--list">
+        {items && items.length > 0 && items.map((item, i) => (
+          <div key={i} className="list--items">
+            <div>
+              <div>
+                <h5>
+                  {item.name}
+                </h5>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className="custom--button ligth--button">
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  className="custom--button ligth--button">
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div>
+              <div>
+                <div>{`IP Address: ${item.ipAddress}`}</div>
+                <div>{`MTU: ${item.mtu}`}</div>
+              </div>
+              <div>
+                <div>{`Status: ${item.status}`}</div>
+                <div>{`Speed: ${item.speed}`}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export { DataCard, ListCard, InterfaceConfigration };

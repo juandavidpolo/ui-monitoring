@@ -1,5 +1,6 @@
-@use './colors.scss' as colors;
 @use './borders.scss' as borders;
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
 
 .custom--sidebar{
   display: flex;
@@ -16,8 +17,8 @@
     border: borders.$no_border;
     border-radius: 10px;
     &>.sidebar--badge{
-      background-color: colors.$light;
-      color: colors.$dark;
+      background-color: var(--bs-gray-400);
+      color: var(--bs-gray-900);
     }
   }
 }

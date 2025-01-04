@@ -1,5 +1,5 @@
 @use '../components/viewHeader.scss';
-@use '../components/dataCard.scss';
+@use '../components/cards.scss';
 
 .main--section.configure--view{
   display: flex;
@@ -9,6 +9,9 @@
     gap: 10px;
     &>.data--card{
       flex: 1 1 30%;
+    }
+    &>.list--card{
+      flex: 1 1 49%;
     }
   }
 }
