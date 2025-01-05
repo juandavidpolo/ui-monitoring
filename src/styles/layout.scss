@@ -44,12 +44,35 @@
       }
       &>:last-child {
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-end;
         gap: 1rem;
         &>.client--selector,
         .view--selector {
           margin: 0px;
           padding: 0px;
+          height: 2rem;
+        }
+        .view--selector.active {
+          border-bottom: 1px solid var(--bs-gray-900);
+        }
+        &>.client--selector{
+          border: none;
+          border-right: 1px solid var(--bs-gray-400);
+          border-left: 1px solid var(--bs-gray-400);
+          &>.client--selector--button,
+          .client--selector--button:hover,
+          .client--selector--button:active,
+          .client--selector--button:focus,
+          .client--selector--button:focus-visible,
+          .client--selector--button::after{
+            border: 1px solid transparent;
+            background: unset;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        &>.client--selector:focus-visible, .client--selector{
+          outline: none;
         }
       }
     }

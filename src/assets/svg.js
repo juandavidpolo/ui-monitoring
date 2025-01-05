@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import {} from '@fortawesome/free-brands-svg-icons';
 import {
+  faAngleDown,
   faArrowDown,
   faMagnifyingGlass,
   faServer,
@@ -38,10 +39,10 @@ export const notificationsCampaing = (color="#3B3B3D", size="", flip="", rotatio
   )
 }
 
-export const navigationArrow = (color="#3B3B3D", size="", flip="", rotation=0) => {
+export const angleUp = (color="#3B3B3D", size="", flip="", rotation=0) => {
   return(
     <FontAwesomeIcon 
-      icon={faArrowDown}
+      icon={faAngleDown}
       size={size}
       style={{color: color}}
       flip={flip}

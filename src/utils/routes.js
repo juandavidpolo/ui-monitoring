@@ -10,8 +10,23 @@ export const getViews = (callback) => {
     const module = context(file);
 
     const routeData = callback(routePath, module);
-    if (routeData) routes.push(routeData);
+    if (routeData) {
+      const routeWithOrder = { ...routeData, order: getRoutesOrder(routePath) };
+      routes.push(routeWithOrder);
+    }
   });
+
+  routes.sort((a, b) => a.order - b.order);
 
   return routes;
 };
+
+
+export const getRoutesOrder = (routePath) => {
+  const orderMap = {
+    "monitor": 1,
+    "configure": 2
+  };
+
+  return orderMap[routePath] || 100;
+}
