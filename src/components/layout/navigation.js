@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from 'reactstrap';
 
-import { getViews, getRoutesOrder } from 'src/utils/routes';
+import { getViews } from 'src/utils/routes';
 import {userIcon, notificationsCampaing} from 'src/assets/svg';
 
 const NavigationBar = () => {
@@ -66,33 +60,28 @@ const NavigationBar = () => {
       </div>
       <div className="navigation--section">
         <div className="client--selector">
-            <Dropdown
-              isOpen={dropdownOpen}
-              toggle={toggle}
-              direction="down"
-              className="client--selector">
-            <DropdownToggle
-              color="light"
-              className="client--selector--button"
-              caret>Dropdown</DropdownToggle>
-            <DropdownMenu>
-              {clients && clients.length > 0 && clients.map((client, i) => (
-                <DropdownItem key={i}>
-                    {client.name}
-                </DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
+          <button
+            className="custom--button nav--button client--selector--button"
+            onClick={()=>toggle()}>
+            Cliente
+          </button>
+          <div className={dropdownOpen?`clients--container show`:`clients--container`}>
+            {clients && clients.length > 0 && clients.map((client, i) => (
+              <div className="client--item" key={i}>
+                  {client.name}
+              </div>
+            ))}
+          </div>
         </div>
         {navItems && navItems.length>0 && navItems.map((navItem, i)=>(
           <div
             key={i}
             className={location.pathname === `/${navItem.route}`? `view--selector active`:`view--selector`}>
-            <a type="button"
+            <button
               className="custom--button nav--button"
               onClick={()=>{navigate(`/${navItem.route}`)}}>
               {navItem.name}
-            </a>
+            </button>
           </div>
         ))}
       </div>
