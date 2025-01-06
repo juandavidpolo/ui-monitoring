@@ -1,4 +1,4 @@
-const getColor = (colorName) => {
+export const getColor = (colorName) => {
   const style = getComputedStyle(document.documentElement);
   return {
     "key": colorName,
@@ -28,6 +28,30 @@ export const warning = () => {
 
 export const danger = () => {
   return getColor('danger');
+}
+
+export const primaryTextEmphasis = () => {
+  return getColor('primary-text-emphasis');
+}
+
+export const secondaryTextEmphasis = () => {
+  return getColor('secondary-text-emphasis');
+}
+
+export const successTextEmphasis = () => {
+  return getColor('success-text-emphasis');
+}
+
+export const infoTextEmphasis = () => {
+  return getColor('info-text-emphasis');
+}
+
+export const warningTextEmphasis = () => {
+  return getColor('warning-text-emphasis');
+}
+
+export const dangerTextEmphasis = () => {
+  return getColor('danger-text-emphasis');
 }
 
 export const gray_100 = () => {

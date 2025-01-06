@@ -4,6 +4,7 @@ import { Row } from "reactstrap";
 import { useLocation } from 'react-router-dom';
 
 import Sidebar from "src/components/layout/sidebar";
+import CustomModal from "src/components/customModal";
 import ViewHeader from "src/components/viewHeader";
 import { DataCard, ListCard } from "src/components/cards";
 import { warning, danger } from "src/utils/getDefinedStyles";

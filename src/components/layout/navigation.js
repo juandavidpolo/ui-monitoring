@@ -65,7 +65,7 @@ const NavigationBar = () => {
             onClick={()=>toggle()}>
             Cliente
           </button>
-          <div className={dropdownOpen?`clients--container show`:`clients--container`}>
+          <div className={dropdownOpen?`clients--container`:`clients--container hide`}>
             {clients && clients.length > 0 && clients.map((client, i) => (
               <div className="client--item" key={i}>
                   {client.name}

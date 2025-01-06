@@ -6,6 +6,8 @@
 @use './views/configure.scss';
 /*Components*/
 @use './components/searchinput.scss';
+@use './components/notifications.scss';
+@use './components/customModal.scss';
 
 html {
   font-size: 18px;

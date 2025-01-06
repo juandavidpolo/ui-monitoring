@@ -7,12 +7,14 @@ import {
 import {} from '@fortawesome/free-brands-svg-icons';
 import {
   faAngleDown,
-  faArrowDown,
   faMagnifyingGlass,
   faServer,
   faDatabase,
   faTriangleExclamation,
   faCircleExclamation,
+  faCircleInfo,
+  faCircleCheck,
+  faCircleXmark,
   faCloud
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -109,6 +111,39 @@ export const circleExclamation = (color="#3B3B3D", size="", flip="", rotation=0)
   return(
     <FontAwesomeIcon
       icon={faCircleExclamation}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const circleInfo = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faCircleInfo}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const circleCheck = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faCircleCheck}
+      size={size}
+      style={{color: color}}
+      flip={flip}
+      rotation={rotation}/>
+  )
+}
+
+export const circleXMarck = (color="#3B3B3D", size="", flip="", rotation=0) => {
+  return(
+    <FontAwesomeIcon
+      icon={faCircleXmark}
       size={size}
       style={{color: color}}
       flip={flip}
