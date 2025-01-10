@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { getViews } from 'src/utils/routes';
@@ -7,6 +7,8 @@ import {userIcon, notificationsCampaing} from 'src/assets/svg';
 const NavigationBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const clientSelectorRef = useRef(null);
 
   const [navItems, setNavItems] = useState([]);
   const [clients, setClients] = useState([
@@ -26,13 +28,26 @@ const NavigationBar = () => {
       status: "Active"
     }
   ]);
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   useEffect(()=>{
     setNavItems(getNavItems)
   },[])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (clientSelectorRef.current && !clientSelectorRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const getNavItems = () => {
     return getViews((routePath) => ({
@@ -59,7 +74,7 @@ const NavigationBar = () => {
         </div>
       </div>
       <div className="navigation--section">
-        <div className="client--selector">
+        <div className="client--selector" ref={clientSelectorRef}>
           <button
             className="custom--button nav--button client--selector--button"
             onClick={()=>toggle()}>

@@ -1,23 +1,18 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import { getViews } from 'src/utils/routes';
-
-import Layout from "src/components/layout";
 import NotificationsManager from "src/components/notifications";
+import Views from "./views";
+import Login from "./views/login";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            {getViews((routePath, module) => {
-              const Component = module.default;
-              return <Route key={routePath} path={`/${routePath}`} element={<Component />} />;
-            })}
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="*" element={<Views/>}/>
+          <Route path="/login" element={<Login/>}/>
+        </Routes>
       </BrowserRouter>
       <NotificationsManager/>
     </>

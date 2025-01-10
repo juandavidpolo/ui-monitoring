@@ -3,11 +3,13 @@
 @use './utils/buttons.scss';
 @use './utils/sidebar.scss';
 /*Views*/
+@use './views/login.scss';
 @use './views/configure.scss';
+@use './views/monitor.scss';
 /*Components*/
 @use './components/searchinput.scss';
 @use './components/notifications.scss';
-@use './components/customModal.scss';
+@use './components/terminalComponent.scss';
 
 html {
   font-size: 18px;

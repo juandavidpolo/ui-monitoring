@@ -1,0 +1,32 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.login--view{
+  height: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &>.login--container{
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: flex-start;
+    &>div{
+      width: 100%;
+      &>input{
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px solid var(--bs-gray-900);
+      }
+      &>input:active, input:focus-visible{
+        outline: none;
+      }
+    }
+  }
+}

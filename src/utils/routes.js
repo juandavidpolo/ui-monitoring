@@ -12,7 +12,9 @@ export const getViews = (callback) => {
     const routeData = callback(routePath, module);
     if (routeData) {
       const routeWithOrder = { ...routeData, order: getRoutesOrder(routePath) };
-      routes.push(routeWithOrder);
+      if (routeWithOrder.order !== null){
+        routes.push(routeWithOrder);
+      }
     }
   });
 
@@ -28,5 +30,5 @@ export const getRoutesOrder = (routePath) => {
     "configure": 2
   };
 
-  return orderMap[routePath] || 100;
+  return orderMap[routePath] || null;
 }
